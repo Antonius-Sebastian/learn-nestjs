@@ -31,6 +31,24 @@
 $ npm install
 ```
 
+### Environment variables
+
+The app loads env from `.env.${NODE_ENV}`. Create the right file for your environment:
+
+- **Development** — Create `.env.development` in the project root (used by `npm run start`, `start:dev`, etc.):
+
+  ```
+  DB_NAME=dev.sqlite
+  ```
+
+- **Test** — Create `.env.test` in the project root (used by `npm run test`, `test:e2e`, etc.):
+
+  ```
+  DB_NAME=test.sqlite
+  ```
+
+Add any other variables your app needs to the same files. Do not commit secrets; keep `.env.*` in `.gitignore` and use `.env.example` or docs for required keys.
+
 ## Compile and run the project
 
 ```bash
