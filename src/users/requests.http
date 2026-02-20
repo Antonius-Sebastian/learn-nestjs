@@ -1,0 +1,40 @@
+POST http://localhost:3006/auth/signUp
+Content-Type: application/json
+
+{
+    "email": "antoyni@example.com",
+    "password": "admin123"
+}
+###
+POST http://localhost:3006/auth/signIn
+Content-Type: application/json
+
+{
+    "email": "antoyni@example.com",
+    "password": "admin123"
+}
+
+###
+GET http://localhost:3006/auth/me
+
+###
+POST http://localhost:3006/auth/signOut
+
+###
+GET http://localhost:3006/auth/15
+
+###
+GET http://localhost:3006/auth?email=email@example.com
+
+
+###
+PATCH http://localhost:3006/auth/11
+Content-Type: application/json
+
+{
+    "email": "anton@anton.com",
+    "password": "wawkfaojiawofj"
+}
+
+###
+DELETE http://localhost:3006/auth/14
