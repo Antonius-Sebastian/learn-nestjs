@@ -21,7 +21,7 @@ GET http://localhost:3006/auth/me
 POST http://localhost:3006/auth/signOut
 
 ###
-GET http://localhost:3006/auth/15
+GET http://localhost:3006/auth/1
 
 ###
 GET http://localhost:3006/auth?email=email@example.com
