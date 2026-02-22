@@ -39,12 +39,14 @@ The app loads env from `.env.${NODE_ENV}`. Create the right file for your enviro
 
   ```
   DB_NAME=dev.sqlite
+  COOKIE_KEY=your-secret-key
   ```
 
 - **Test** — Create `.env.test` in the project root (used by `npm run test`, `test:e2e`, etc.):
 
   ```
   DB_NAME=test.sqlite
+  COOKIE_KEY=your-secret-key
   ```
 
 Add any other variables your app needs to the same files. Do not commit secrets; keep `.env.*` in `.gitignore` and use `.env.example` or docs for required keys.

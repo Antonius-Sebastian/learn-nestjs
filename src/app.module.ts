@@ -21,7 +21,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       useFactory: (config: ConfigService) => {
         return {
           type: 'sqlite',
-          database: config.get<string>('DB_NAME'),
+          database: config.getOrThrow<string>('DB_NAME'),
           entities: [User, Report],
           synchronize: true,
         };
@@ -44,11 +44,12 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
   ],
 })
 export class AppModule {
+  constructor(private configService: ConfigService) {}
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(
         cookieSession({
-          keys: ['secret-key'],
+          keys: [this.configService.getOrThrow<string>('COOKIE_KEY')],
         }),
       )
       .forRoutes('*');
