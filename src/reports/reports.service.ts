@@ -10,7 +10,7 @@ import { GetEstimateDto } from './dtos/get-estimate.dto';
 export class ReportsService {
   constructor(@InjectRepository(Report) private repo: Repository<Report>) {}
 
-  createEstimate({
+  getEstimate({
     make,
     model,
     year,
@@ -18,10 +18,6 @@ export class ReportsService {
     latitude,
     longitude,
   }: GetEstimateDto) {
-    // return this.repo.find({
-    //   where: { make: query.make, model: query.model },
-    //   relations: { user: true },
-    // });
     return this.repo
       .createQueryBuilder()
       .select('AVG(price)', 'price')
