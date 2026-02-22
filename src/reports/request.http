@@ -2,11 +2,22 @@ POST http://localhost:3006/reports
 Content-Type: application/json
 
 {
-    "price": 10000,
-    "make": "Toyota",
-    "model": "Corolla",
-    "year": 1980,
+    "price": 300000,
+    "make": "Ford",
+    "model": "Mustang",
+    "year": 2026,
     "mileage": 100,
     "latitude": 0,
-    "longitude": 0
+    "longitude": 1
 }
+
+###
+PATCH http://localhost:3006/reports/approve/17
+Content-Type: application/json
+
+{
+    "approved": true
+}
+
+###
+GET http://localhost:3006/reports?make=Ford&model=Mustang&year=2025&mileage=100&latitude=0&longitude=0
